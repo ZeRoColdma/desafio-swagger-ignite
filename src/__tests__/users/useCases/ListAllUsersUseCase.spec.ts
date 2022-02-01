@@ -15,20 +15,20 @@ describe("ListAllUsersUseCase", () => {
 
   it("should be able to list all users", () => {
     const user1 = usersRepository.create({
-      name: "Danilo Vieira",
-      email: "danilo@rocketseat.com",
+      name: "Carlos Alberto",
+      email: "carlos@rocketseat.com",
     });
 
     const user2 = usersRepository.create({
-      name: "Vinicius Fraga",
-      email: "vinifraga@rocketseat.com",
+      name: "Julia Maria",
+      email: "julia@rocketseat.com",
     });
 
     userId = user2.id;
 
     const user3 = usersRepository.create({
-      name: "Joseph Oliveira",
-      email: "dogim@rocketseat.com",
+      name: "Francisco",
+      email: "fran@rocketseat.com",
     });
 
     usersRepository.turnAdmin(user1);
@@ -38,12 +38,12 @@ describe("ListAllUsersUseCase", () => {
     expect(users).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          name: "Danilo Vieira",
+          name: "Carlos Alberto",
           email: "danilo@rocketseat.com",
         }),
         user2,
         user3,
-      ])
+      ]),
     );
   });
 

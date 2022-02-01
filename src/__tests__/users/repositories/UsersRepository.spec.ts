@@ -11,13 +11,13 @@ describe("UsersRepository", () => {
 
   it("should be able to create new users", () => {
     const user = usersRepository.create({
-      name: "Vinicius Fraga",
-      email: "vinifraga@rocketseat.com",
+      name: "Carlos Alberto",
+      email: "carlos_silva@rocketseat.com",
     });
 
     expect(user).toMatchObject({
-      name: "Vinicius Fraga",
-      email: "vinifraga@rocketseat.com",
+      name: "Carlos Alberto",
+      email: "carlos_silva@rocketseat.com",
       admin: false,
     });
     expect(validate(user.id)).toBe(true);
@@ -27,8 +27,8 @@ describe("UsersRepository", () => {
 
   it("should be able to list all users", () => {
     const user = usersRepository.create({
-      name: "Danilo Vieira",
-      email: "danilo@rocketseat.com",
+      name: "Carlos Alberto",
+      email: "silva@rocketseat.com",
     });
 
     const users = usersRepository.list();
@@ -38,8 +38,8 @@ describe("UsersRepository", () => {
 
   it("should be able to find user by ID", () => {
     const user = usersRepository.create({
-      name: "Vinicius Fraga",
-      email: "vinifraga@rocketseat.com",
+      name: "Carlos Alberto",
+      email: "silva@rocketseat.com",
     });
 
     const findUser = usersRepository.findById(user.id);
@@ -56,8 +56,8 @@ describe("UsersRepository", () => {
 
   it("should be able to find user by e-mail address", () => {
     const user = usersRepository.create({
-      name: "Vinicius Fraga",
-      email: "vinifraga@rocketseat.com",
+      name: "Carlos Alberto",
+      email: "silva@rocketseat.com",
     });
 
     const findUser = usersRepository.findByEmail(user.email);
@@ -74,8 +74,8 @@ describe("UsersRepository", () => {
 
   it("should be able to turn an user as admin", () => {
     const user = usersRepository.create({
-      name: "Vinicius Fraga",
-      email: "vinifraga@rocketseat.com",
+      name: "Carlos Alberto",
+      email: "silva@rocketseat.com",
     });
 
     const admin = usersRepository.turnAdmin(user);
